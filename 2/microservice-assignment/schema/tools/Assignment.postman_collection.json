@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "dfab04a3-f1b0-45a2-9fcd-ac3ebb7a2321",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Direct API",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://www.omdbapi.com?apikey=faf7e5bb&s=captain&page=2&y=2019&type=movie",
+							"protocol": "http",
+							"host": [
+								"www",
+								"omdbapi",
+								"com"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "faf7e5bb"
+								},
+								{
+									"key": "s",
+									"value": "captain"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "y",
+									"value": "2019"
+								},
+								{
+									"key": "type",
+									"value": "movie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://www.omdbapi.com/?apikey=faf7e5bb&i=tt11383906",
+							"protocol": "http",
+							"host": [
+								"www",
+								"omdbapi",
+								"com"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "faf7e5bb"
+								},
+								{
+									"key": "i",
+									"value": "tt11383906"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/v1/movie?search=captain&page=1&year=10&type=series",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "captain",
+							"description": "alphanumeric"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"description": "numeric"
+						},
+						{
+							"key": "year",
+							"value": "10",
+							"description": "year format YYYY"
+						},
+						{
+							"key": "type",
+							"value": "series",
+							"description": "movie, series, episode"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/api/v1/movie?search=captain&page=10&year=2019&type=series",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "captain"
+								},
+								{
+									"key": "page",
+									"value": "10"
+								},
+								{
+									"key": "year",
+									"value": "2019"
+								},
+								{
+									"key": "type",
+									"value": "series"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Server",
+							"value": "EXAMPLE-SERVICE"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 30 Mar 2021 08:59:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1155"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"Success Get Data Movie\",\n    \"meta\": {\n        \"totalRecords\": 4,\n        \"page\": 10\n    },\n    \"data\": [\n        {\n            \"imdbId\": \"tt11383906\",\n            \"title\": \"The 7th Rule: Captain Nog Forever\",\n            \"year\": \"2019–\",\n            \"type\": \"series\",\n            \"poster\": \"https://m.media-amazon.com/images/M/MV5BYjY5MzhkODQtMDBiZi00NjhlLTk0ODYtZGE0MTM0ZGQxY2Q5XkEyXkFqcGdeQXVyMTQ4NDgxMzM@._V1_SX300.jpg\"\n        },\n        {\n            \"imdbId\": \"tt11405600\",\n            \"title\": \"Captain Pineapple\",\n            \"year\": \"2019–\",\n            \"type\": \"series\",\n            \"poster\": \"N/A\"\n        },\n        {\n            \"imdbId\": \"tt9829474\",\n            \"title\": \"Captain Pepe\",\n            \"year\": \"2019–\",\n            \"type\": \"series\",\n            \"poster\": \"https://m.media-amazon.com/images/M/MV5BOGE0YzFiZDktNjEzYy00MGQ2LWJmMTYtODhjYTZlZTg2ODdiXkEyXkFqcGdeQXVyNDgwNDIwMjU@._V1_SX300.jpg\"\n        },\n        {\n            \"imdbId\": \"tt9895470\",\n            \"title\": \"Captain Seasalt and the ABC Pirates\",\n            \"year\": \"2019–\",\n            \"type\": \"series\",\n            \"poster\": \"https://m.media-amazon.com/images/M/MV5BYzkyZDdiNjUtNmFiNS00YzY1LWJkMTktZDNiNWM5YTBkY2ViXkEyXkFqcGdeQXVyNjc2MjUwNzI@._V1_SX300.jpg\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/v1/movie/tt11383906",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"tt11383906"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/api/v1/movie/tt11383906",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"tt11383906"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Server",
+							"value": "EXAMPLE-SERVICE"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 30 Mar 2021 09:26:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "827"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"message\": \"Success Get Data Detail Movie\",\n    \"data\": {\n        \"imdbId\": \"tt11383906\",\n        \"title\": \"The 7th Rule: Captain Nog Forever\",\n        \"year\": \"2019–\",\n        \"type\": \"series\",\n        \"poster\": \"https://m.media-amazon.com/images/M/MV5BYjY5MzhkODQtMDBiZi00NjhlLTk0ODYtZGE0MTM0ZGQxY2Q5XkEyXkFqcGdeQXVyMTQ4NDgxMzM@._V1_SX300.jpg\",\n        \"rated\": \"N/A\",\n        \"released\": \"11 Oct 2019\",\n        \"runtime\": \"N/A\",\n        \"genre\": \"Sci-Fi\",\n        \"director\": \"N/A\",\n        \"writer\": \"N/A\",\n        \"actors\": \"Ryan T. Husk, Cirroc Lofton\",\n        \"plot\": \"N/A\",\n        \"language\": \"English\",\n        \"country\": \"USA\",\n        \"awards\": \"N/A\",\n        \"ratings\": [\n            {\n                \"source\": \"Internet Movie Database\",\n                \"value\": \"8.7/10\"\n            }\n        ],\n        \"metascore\": \"N/A\",\n        \"imdbRating\": \"8.7\",\n        \"imdbVotes\": \"31\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

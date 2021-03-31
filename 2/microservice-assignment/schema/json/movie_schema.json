@@ -1,0 +1,22 @@
+[
+  {
+    "id": "movie_list_params",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "schema get list movie",
+    "type": "object",
+    "properties": {
+      "page": {
+        "type": "string",
+        "pattern": "^[1-9]\\d*$"
+      },
+      "type": {
+        "type": "string",
+        "enum": ["movie", "series", "episode"]
+      },
+      "year": {
+        "type": "string",
+        "pattern": "^\\d{4}$"
+      }
+    }
+  }
+]

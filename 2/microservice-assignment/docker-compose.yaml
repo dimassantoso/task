@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    container_name: mysql
+    hostname: mysql
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: omdb-service
+      MYSQL_USER: omdb
+      MYSQL_PASSWORD: omdb
+      MYSQL_ROOT_PASSWORD: omdb
+    volumes:
+      - ./files:/files
+    networks:
+      - default
+volumes:
+  persistent:
